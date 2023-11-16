@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15proto/greetings.proto\x12\x05hello\"(\n\x08Greeting\x12\x0b\n\x03idx\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15proto/greetings.proto\x12\x05hello\"G\n\x08Greeting\x12\x0b\n\x03idx\x18\n \x01(\r\x12\x0f\n\x07message\x18\x14 \x01(\tJ\x04\x08\x01\x10\nJ\x08\x08\x64\x10\x80\x80\x80\x80\x02R\x03_idR\x08_versionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,5 +21,5 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.greetings_pb2', _glob
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _globals['_GREETING']._serialized_start=32
-  _globals['_GREETING']._serialized_end=72
+  _globals['_GREETING']._serialized_end=103
 # @@protoc_insertion_point(module_scope)
