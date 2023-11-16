@@ -1,14 +1,12 @@
 """Faust consumer app."""
 
-import random
-
 import faust
 from faust.types.topics import TopicT
 from google.protobuf.json_format import MessageToJson
 from loguru import logger as log
 
-from .proto.greetings_pb2 import (
-    Greeting,  # noqa # type: ignore # pylint: disable=unknown-import
+from .proto.greetings_pb2 import (  # pylint: disable=no-name-in-module
+    Greeting,
 )
 from .proto_serializer import ProtobufSerializer
 
@@ -31,8 +29,11 @@ TOPIC: TopicT = app.topic("greetings", schema=greetings_schema)
 def main() -> None:
 
     # create topic greetings first by running e.g.:
+    #   ( go install github.com/fgeller/jsonify@latest )
+    #   ( go install github.com/fgeller/kt/v14@latest )
     # kt admin -createtopic greetings -topicdetail \
     #   <(jsonify =NumPartitions 1 =ReplicationFactor 1)
+
     app.main()
 
     for _topic in app.topics:
