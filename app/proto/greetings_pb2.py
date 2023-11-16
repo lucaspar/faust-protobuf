@@ -13,13 +13,15 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15proto/greetings.proto\x12\x05hello\"G\n\x08Greeting\x12\x0b\n\x03idx\x18\n \x01(\r\x12\x0f\n\x07message\x18\x14 \x01(\tJ\x04\x08\x01\x10\nJ\x08\x08\x64\x10\x80\x80\x80\x80\x02R\x03_idR\x08_versionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15proto/greetings.proto\x12\x05hello\"j\n\x08Greeting\x12\x0b\n\x03idx\x18\n \x01(\r\x12\x0f\n\x07message\x18\x14 \x01(\t\x12!\n\x04type\x18\x1e \x01(\x0e\x32\x13.hello.GreetingTypeJ\x04\x08\x01\x10\nJ\x08\x08\x64\x10\x80\x80\x80\x80\x02R\x03_idR\x08_version*L\n\x0cGreetingType\x12\x10\n\x0cINTRODUCTION\x10\x00\x12\x0c\n\x08\x46\x41REWELL\x10\x01*\x0f\x41UF_WIEDERSEHEN*\x0bVIEL_GLUECKb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.greetings_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
+  _globals['_GREETINGTYPE']._serialized_start=140
+  _globals['_GREETINGTYPE']._serialized_end=216
   _globals['_GREETING']._serialized_start=32
-  _globals['_GREETING']._serialized_end=103
+  _globals['_GREETING']._serialized_end=138
 # @@protoc_insertion_point(module_scope)
