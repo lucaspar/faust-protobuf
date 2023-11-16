@@ -837,6 +837,21 @@ files = [
 ]
 
 [[package]]
+name = "mypy-protobuf"
+version = "3.5.0"
+description = "Generate mypy stub files from protobuf specs"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mypy-protobuf-3.5.0.tar.gz", hash = "sha256:21f270da0a9792a9dac76b0df463c027e561664ab6973c59be4e4d064dfe67dc"},
+    {file = "mypy_protobuf-3.5.0-py3-none-any.whl", hash = "sha256:0d0548c6b9a6faf14ce1a9ce2831c403a5c1f2a9363e85b1e2c51d5d57aa8393"},
+]
+
+[package.dependencies]
+protobuf = ">=4.23.4"
+types-protobuf = ">=4.23.0.2"
+
+[[package]]
 name = "opentracing"
 version = "2.4.0"
 description = "OpenTracing API for Python. See documentation at http://opentracing.io"
@@ -1007,6 +1022,17 @@ files = [
 ]
 
 [[package]]
+name = "types-protobuf"
+version = "4.24.0.4"
+description = "Typing stubs for protobuf"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "types-protobuf-4.24.0.4.tar.gz", hash = "sha256:57ab42cb171dfdba2c74bb5b50c250478538cc3c5ed95b8b368929ad0c9f90a5"},
+    {file = "types_protobuf-4.24.0.4-py3-none-any.whl", hash = "sha256:131ab7d0cbc9e444bc89c994141327dcce7bcaeded72b1acb72a94827eb9c7af"},
+]
+
+[[package]]
 name = "venusian"
 version = "3.0.0"
 description = "A library for deferring decorator actions"
@@ -1125,4 +1151,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "62cb72595c8ddce471370f817f2a34d6b077ff14ec2f7e2ffed0648f13f3635b"
+content-hash = "357a5572037361a30bdc3664adccc3ab1d54963b91ed604a57ec5c6a3967dd5b"

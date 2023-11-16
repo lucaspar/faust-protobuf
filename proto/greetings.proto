@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package hello;
 
-// greeting represents a message you can tell a user.
+// A greeting represents a message you can tell a user.
 message Greeting {
     uint32 idx = 1;
     string message = 2;
