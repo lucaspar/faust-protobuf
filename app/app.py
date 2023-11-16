@@ -1,15 +1,23 @@
+"""Faust consumer app."""
+
+import random
+
 import faust
+from faust.types.topics import TopicT
 from google.protobuf.json_format import MessageToJson
+from loguru import logger as log
 
-from .proto.greetings_pb2 import Greeting
-
+from .proto.greetings_pb2 import (
+    Greeting,  # noqa # type: ignore # pylint: disable=unknown-import
+)
 from .proto_serializer import ProtobufSerializer
 
 app = faust.App(
-    'faust-consumer',
-    broker='kafka://', # TODO: update kafka endpoint
+    "faust-consumer",
+    broker="kafka://",
     store="memory://",
     cache="memory://",
+    topic_partitions=1,
 )
 
 greetings_schema = faust.Schema(
@@ -17,21 +25,32 @@ greetings_schema = faust.Schema(
     value_serializer=ProtobufSerializer(pb_type=Greeting),
 )
 
-topic = app.topic(
-    'greetings',
-    schema=greetings_schema
-)
+TOPIC: TopicT = app.topic("greetings", schema=greetings_schema)
 
-@app.agent(topic)
-async def consume(topic):
-    async for event in topic:
+
+def main() -> None:
+
+    # create topic greetings first by running e.g.:
+    # kt admin -createtopic greetings -topicdetail \
+    #   <(jsonify =NumPartitions 1 =ReplicationFactor 1)
+    app.main()
+
+    for _topic in app.topics:
+        log.info(_topic)
+
+
+@app.agent(TOPIC)
+async def consume(my_topic):
+    async for event in my_topic:
         print(MessageToJson(event))
+
 
 @app.timer(5)
 async def produce():
-    for i in range(10):
-        data = Greeting(hello="world", message=i)
+    for idx in range(10):
+        data = Greeting(message=f"Message #{idx}", idx=idx)
         await consume.send(value=data)
 
+
 if __name__ == "__main__":
-    app.main()
+    main()

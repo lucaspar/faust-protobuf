@@ -1,0 +1,23 @@
+[tool.poetry]
+    authors     = ["Lucas Parzianello <lucaspar@users.noreply.github.com>"]
+    description = ""
+    name        = "faust-protobuf"
+    readme      = "README.md"
+    version     = "0.1.0"
+
+    [tool.poetry.dependencies]
+        faust-streaming = "^0.10.16"
+        grpcio          = "^1.59.2"
+        grpcio-tools    = "^1.59.2"
+        protobuf        = "^4.25.0"
+        python          = ">=3.11,<3.12"
+    loguru = "^0.7.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.5"
+black = "^23.11.0"
+
+[build-system]
+    build-backend = "poetry.core.masonry.api"
+    requires      = ["poetry-core"]

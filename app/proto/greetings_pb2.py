@@ -3,9 +3,9 @@
 # source: proto/greetings.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,65 +13,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='proto/greetings.proto',
-  package='hello',
-  syntax='proto3',
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15proto/greetings.proto\x12\x05hello\"*\n\x08Greeting\x12\r\n\x05hello\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\rb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15proto/greetings.proto\x12\x05hello\"(\n\x08Greeting\x12\x0b\n\x03idx\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\tb\x06proto3')
 
-
-
-
-_GREETING = _descriptor.Descriptor(
-  name='Greeting',
-  full_name='hello.Greeting',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='hello', full_name='hello.Greeting.hello', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='hello.Greeting.message', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=32,
-  serialized_end=74,
-)
-
-DESCRIPTOR.message_types_by_name['Greeting'] = _GREETING
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Greeting = _reflection.GeneratedProtocolMessageType('Greeting', (_message.Message,), {
-  'DESCRIPTOR' : _GREETING,
-  '__module__' : 'proto.greetings_pb2'
-  # @@protoc_insertion_point(class_scope:hello.Greeting)
-  })
-_sym_db.RegisterMessage(Greeting)
-
-
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.greetings_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
+  DESCRIPTOR._options = None
+  _globals['_GREETING']._serialized_start=32
+  _globals['_GREETING']._serialized_end=72
 # @@protoc_insertion_point(module_scope)

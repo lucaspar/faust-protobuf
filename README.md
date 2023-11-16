@@ -4,7 +4,17 @@ An example how use [`faust-streaming`](https://github.com/faust-streaming/faust)
 
 ## Run Instructions
 
-1. Run `make install`
-2. Activate conda environment
-3. Run `make proto`
-4. Run `make run`
+Run a Kafka broker and Zookeeper using docker compose.
+
+```bash
+docker compose up -d
+docker compose logs -f
+```
+
+On another terminal, run the producers and consumers:
+
+```bash
+poetry install --no-root
+poetry run python -m grpc_tools.protoc -I . --python_out=app proto/greetings.proto
+poetry run python -m app.app worker
+```
