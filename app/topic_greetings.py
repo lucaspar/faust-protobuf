@@ -17,4 +17,4 @@ _greetings_schema = faust.Schema(
 
 greetings_topic: TopicT = app.topic("greetings", schema=_greetings_schema)
 
-__all__ = ["app", "greetings_topic", "GreetingTBuilder"]
+__all__ = ["greetings_topic", "GreetingTBuilder"]

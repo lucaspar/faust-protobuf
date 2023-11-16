@@ -17,6 +17,9 @@ def main() -> None:
     #   <(jsonify =NumPartitions 1 =ReplicationFactor 1)
 
     log.info("Starting app")
+    # create topic if it does not exist
+    greetings_topic.maybe_declare()
+
     try:
         app.main()
     finally:
@@ -36,8 +39,7 @@ async def produce_greetings():
     for idx in range(10):
         data = GreetingTBuilder(message=f"Greetings! (#{idx})", idx=idx)
         log.info(f"Sending '{data.message}'")
-        log.info(data.SerializeToString().decode("utf-8"))
-        await consume_greetings.send(value=data)
+        await greetings_topic.send(value=data)
 
 
 if __name__ == "__main__":

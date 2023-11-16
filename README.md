@@ -18,8 +18,6 @@ poetry install --no-root
 poetry run python -m grpc_tools.protoc -I . \
     --python_out=app \
     --mypy_out=app \
-    --grpc_out=app \
-    --mypy_grpc_out=app \
     proto/greetings.proto
 poetry run python -m app.app worker
 ```
