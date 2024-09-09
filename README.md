@@ -4,7 +4,8 @@ An example how use [`faust-streaming`](https://github.com/faust-streaming/faust)
 
 ## Run Instructions
 
-1. Run `make install`
-2. Activate conda environment
-3. Run `make proto`
-4. Run `make run`
+```bash
+make install
+make proto
+make run    # run it twice to create a topic
+```

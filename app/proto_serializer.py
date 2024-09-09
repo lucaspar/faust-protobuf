@@ -1,12 +1,10 @@
-from faust.serializers import codecs
 from typing import Any
 
-from google.protobuf import json_format
-from google.protobuf.json_format import MessageToJson
-from google.protobuf.json_format import MessageToDict
-from google.protobuf import text_format
-from google.protobuf.text_format import MessageToString
-from google.protobuf.text_format import MessageToBytes
+from faust.serializers import codecs
+from google.protobuf import json_format, text_format
+from google.protobuf.json_format import MessageToDict, MessageToJson
+from google.protobuf.text_format import MessageToBytes, MessageToString
+
 
 class ProtobufSerializer(codecs.Codec):
     def __init__(self, pb_type: Any):
@@ -20,4 +18,3 @@ class ProtobufSerializer(codecs.Codec):
         pb = self.pb_type()
         pb.ParseFromString(s)
         return pb
-

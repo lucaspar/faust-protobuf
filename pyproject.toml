@@ -1,0 +1,8 @@
+[project]
+    authors         = [{ name = "" }]
+    dependencies    = ["faust-streaming>=0.11.3", "grpcio>=1.66.1", "grpcio-tools>=1.66.1", "protobuf>=5.28.0"]
+    description     = ""
+    name            = "faust-protobuf"
+    readme          = "README.md"
+    requires-python = ">=3.12"
+    version         = "0.1.0"
